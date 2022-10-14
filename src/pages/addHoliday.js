@@ -23,7 +23,7 @@ class Addholiday extends Component
         if(this.state.startDate > this.state.endDate) {
             swal({
                 title: "Warning!",
-                text: 'Please search the correct date range!',
+                text: 'Please insert the correct date range!',
                 icon: "warning",
                 button: "OK!",
               });

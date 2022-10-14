@@ -28,7 +28,7 @@ function Holidays() {
         if(search.from > search.to) {
             swal({
                 title: "Warning!",
-                text: 'Please insert the correct date range!',
+                text: 'Please search the correct date range!',
                 icon: "warning",
                 button: "OK!",
               });
