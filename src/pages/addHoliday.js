@@ -20,9 +20,19 @@ class Addholiday extends Component
     saveHoliday = async (e) => {
         e.preventDefault();
 
+        if(this.state.startDate > this.state.endDate) {
+            swal({
+                title: "Warning!",
+                text: 'Please search the correct date range!',
+                icon: "warning",
+                button: "OK!",
+              });
+              return;
+        }
+
         const res = await axios.post('http://127.0.0.1:8000/api/add-holiday', this.state);
+
         if(res.data.status === 200)
-        debugger;
         {
             swal({
                 title: "Success!",

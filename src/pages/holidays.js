@@ -24,6 +24,17 @@ function Holidays() {
     }, []);
 
     const searchHoliday = (e) => {
+
+        if(search.from > search.to) {
+            swal({
+                title: "Warning!",
+                text: 'Please insert the correct date range!',
+                icon: "warning",
+                button: "OK!",
+              });
+            return;
+        }
+
         axios.get(`http://127.0.0.1:8000/api/holiday?from=${search.from}&to=${search.to}`).then(res=> {
 
             if(res.data.status === 200) {
